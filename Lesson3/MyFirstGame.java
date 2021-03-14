@@ -61,11 +61,11 @@ public class MyFirstGame {
             int col = 0;
 
             while (true) {
-                // Столбцы и строки от пользователя
+                // Столбцы и строки от пользователя -1 чтобы не считать с ноля
                 System.out.print("Введите номер строки: ");
-                row = in.nextInt();
+                row = in.nextInt() - 1;
                 System.out.print("Введите номер столбца: ");
-                col = in.nextInt();
+                col = in.nextInt() - 1;
 
                 // Проверка валидности хода
                 if (row < 0 || col < 0 || row >= n || col >= n) {
@@ -134,7 +134,7 @@ public class MyFirstGame {
             if (value == '_') {
                 inARow = false;
             } else {
-                for (int j = 1; j < board[i].length; j++) {
+                for (int j = 1; j < board[i].length - 1; j++) {
                     if (board[i][j] != value) {
                         inARow = false;
                         break;
@@ -158,7 +158,7 @@ public class MyFirstGame {
             if (value == '_') {
                 inACol = false;
             } else {
-                for (int i = 1; i < board.length; j++) {
+                for (int i = 1; i < board.length - 1; i++) {
                     if (board[i][j] != value) {
                         inACol = false;
                         break;
@@ -183,7 +183,7 @@ public class MyFirstGame {
         char value1 = board[0][0];
         if (value1 == '_') {
         } else {
-            for (int i = 0; i < board.length; i++) {
+            for (int i = 0; i < board.length - 1; i++) {
                 if (board[i][i] != value1){
                     inD1 = false;
                     break;
@@ -200,7 +200,7 @@ public class MyFirstGame {
         if (value2 == '_') {
             inD2 = false;
         } else {
-            for (int i = 1; i < board.length; i++) {
+            for (int i = 1; i < board.length - 1; i++) {
                 if (board[i][board[0].length - 1 - i] != value2) {
                     inD2 = false;
                     break;
